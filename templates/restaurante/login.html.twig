@@ -1,0 +1,32 @@
+{# templates/restaurante/carta.html.twig #}
+{% extends 'restaurante/estructuraBase.html.twig' %}
+
+{% block titulo %}Bienvenido a Casa Carmen{% endblock %}
+
+{% block contenido %}
+
+<br> <br> <br> <br> <br> <br> <br> <br>
+<hr></hr>
+<div class = "container">
+{% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+
+<form action="{{ path('login_check') }}" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="_password" />
+
+    <input type="checkbox" id="remember_me" name="_remember_me" checked />
+    <label for="remember_me">Keep me logged in</label>
+    <br><br>
+    <input type="hidden" name="_target_path" value="panelcontrol" />
+    <input type="submit" class="section-btn" name="login" />
+</form>
+       </div>     
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

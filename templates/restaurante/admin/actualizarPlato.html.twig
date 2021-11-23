@@ -1,0 +1,19 @@
+{# templates/restaurante/carta.html.twig #}
+{% extends 'restaurante/estructuraBase.html.twig' %}
+
+{% block titulo %}Bienvenido a Casa Carmen{% endblock %}
+
+{% block contenido %}
+
+
+            <div class="contact-form container">
+	        <h3>Actualizar Plato</h3>
+	        {{form(form)}}
+            
+            <a href="{{ path('restaurante_eliminar', {'id' : plato.id }) }}"><button class="submit">Borrar Plato</button></a>
+            </div> 
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

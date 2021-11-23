@@ -1,0 +1,39 @@
+{# templates/restaurante/carta.html.twig #}
+{% extends 'restaurante/estructuraBase.html.twig' %}
+
+{% block titulo %}Bienvenido a Casa Carmen{% endblock %}
+
+{% block contenido %}
+
+<br> <br> <br> <br> <br> <br> <br> <br>
+<hr></hr>
+<div class = "container">
+
+            <hr></hr>
+               <a href="carta" class="section-btn">EDITAR CARTA</a>
+               <hr></hr>
+
+               <hr></hr>
+               <a href="introducirPlato" class="section-btn">AÑADIR PLATO</a>
+               <hr></hr>
+
+                <hr></hr>
+               <a href="{{path('app_logout')}}" class="section-btn">CERRAR SESION</a>
+               <hr></hr>
+       </div>     
+{% endblock %}
+
+{% block css %}
+        {{parent()}}
+        <style>
+        .custom-navbar .navbar-brand {
+    color: black !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        .custom-navbar .nav li a {
+    color: black !important;
+}
+        </style>
+{% endblock %}

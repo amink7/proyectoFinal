@@ -1,0 +1,50 @@
+{# templates/restaurante/carta.html.twig #}
+{% extends 'restaurante/estructuraBase.html.twig' %}
+
+{% block titulo %}Bienvenido a Casa Carmen{% endblock %}
+
+{% block contenido %}
+     <br> <br> <br> <br> 
+     <div class="container"> 
+
+  {% for categoria in categorias %}
+    <h2>{{categoria.nombre}}</h2>
+     <table class="table">  
+     <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+        {% for plato in categoria.platos %}
+          
+  
+  <tbody>
+    <tr>
+      <th scope="row">{{plato.id}}</th>
+      <td>{{plato.nombre}}</td>
+      <td>{{plato.descripcion}}</td>
+      <td>{{plato.precio}}€</td>
+      <td><a href="{{path('restaurante_actualizar', {'idPlato': plato.id})}}"><button class="submit" type="button" name="button">Editar</button></a> </td>
+      
+    </tr>
+    <br>
+  
+                         
+                           
+          
+        {% endfor %}
+        </div>  
+        <div class="clearfix"> </div>
+</tbody>
+</table>
+        {% endfor %}
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

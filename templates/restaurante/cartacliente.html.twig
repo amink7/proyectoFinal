@@ -1,0 +1,45 @@
+{% extends 'restaurante/estructuraBase.html.twig' %}
+
+{% block titulo %}Bienvenido a Casa Carmen{% endblock %}
+
+{% block contenido %}
+     <br> <br> <br> <br> 
+     <div class="container"> 
+     <table class="table">  
+     <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+    </tr>
+  </thead>
+        {% for plato in platos %}
+          
+  
+  <tbody>
+    <tr>
+      <th scope="row">{{plato.id}}</th>
+      <td>{{plato.nombre}}</td>
+      <td>{{plato.descripcion}}</td>
+      <td>{{plato.precio}}€</td>
+      
+      
+    </tr>
+    <br>
+  
+                         
+                           
+          
+        {% endfor %}
+        </div>  
+        <div class="clearfix"> </div>
+</tbody>
+</table>
+        
+
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

@@ -1,3 +1,54 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\RestauranteController::index
+
+carta:
+    path: /admin/carta
+    controller: App\Controller\RestauranteController::carta
+    
+cartacliente:
+    path: /cartacliente
+    controller: App\Controller\RestauranteController::cartacliente 
+    
+panelcontrol:
+    path: /admin/panelcontrol
+    controller: App\Controller\RestauranteController::control     
+
+restaurante_introducir:
+    path:     /admin/introducirPlato
+    controller: App\Controller\RestauranteController::introducirPlato 
+
+restaurante_actualizar:
+    path:     /admin/actualizarPlato/{idPlato}
+    controller: App\Controller\RestauranteController::actualizarPlato 
+
+restaurante_eliminar:
+    path:     /admin/eliminarPlato/{idPlato}
+    controller: App\Controller\RestauranteController::eliminarPlato
+
+restaurante_plato:
+    path:     /admin/carta/{idPlato}
+    controller: App\Controller\RestauranteController::platounico   
+
+adminlogin:
+    path:     /admin/login
+    controller: App\Controller\RestauranteController::control 
+
+app_logout:
+    path: /logout  
+
+introducir_categoria:
+    path:     /admin/introducirCategoria
+    controller: App\Controller\RestauranteController::introducirCategoria  
+    
+introducir_oferta:
+    path:     /admin/introducirOferta
+    controller: App\Controller\RestauranteController::introducirOferta    
+
+    
+
+
+
+
+    
+
