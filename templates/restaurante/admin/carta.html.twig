@@ -4,7 +4,7 @@
 {% block titulo %}Bienvenido a Casa Carmen{% endblock %}
 
 {% block contenido %}
-     <br> <br> <br> <br> 
+    <section data-stellar-background-ratio="0.5">
      <div class="container"> 
 
   {% for categoria in categorias %}
@@ -12,39 +12,53 @@
      <table class="table">  
      <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Nombre</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Precio</th>
+      <th scope="col">Oferta</th>
+      <th scope="col"></th>
       <th scope="col"></th>
     </tr>
   </thead>
         {% for plato in categoria.platos %}
+        
           
   
   <tbody>
     <tr>
-      <th scope="row">{{plato.id}}</th>
       <td>{{plato.nombre}}</td>
       <td>{{plato.descripcion}}</td>
       <td>{{plato.precio}}€</td>
+      <td>€</td>
       <td><a href="{{path('restaurante_actualizar', {'idPlato': plato.id})}}"><button class="submit" type="button" name="button">Editar</button></a> </td>
+      <td><a href="{{path('restaurante_eliminar', {'idPlato': plato.id})}}"><button class="submit" type="button" name="button">Eliminar</button></a> </td>
       
     </tr>
     <br>
   
                          
                            
-          
         {% endfor %}
-        </div>  
+          
         <div class="clearfix"> </div>
 </tbody>
 </table>
         {% endfor %}
-
-
+</div>
+  </section>
 {% endblock %}
 
-{% block sidebar %}
+{% block css %}
+        {{parent()}}
+        <style>
+        .custom-navbar .navbar-brand {
+    color: black !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        .custom-navbar .nav li a {
+    color: black !important;
+}
+        </style>
 {% endblock %}

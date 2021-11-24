@@ -64,6 +64,8 @@ class Plato
      */
     private $oferta;
 
+   
+
 
 
 
@@ -197,5 +199,14 @@ class Plato
         return $this;
     }
 
+    public function getPrecioFinal(): ?int
+    {
+        return $this->precioFinal;
+    }
+
+    
+
+    
+    
     
 }

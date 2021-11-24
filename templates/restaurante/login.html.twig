@@ -5,28 +5,52 @@
 
 {% block contenido %}
 
-<br> <br> <br> <br> <br> <br> <br> <br>
-<hr></hr>
+<br> <br> <br> 
+<hr>
+<section data-stellar-background-ratio="0.5">
 <div class = "container">
+<div class="row">
 {% if error %}
     <div>{{ error.message }}</div>
 {% endif %}
 
 <form action="{{ path('login_check') }}" method="post">
-    <label for="username">Username:</label>
+    <div class="col-md-12 col-sm-12">
+    <label for="username">Usuario:</label>
     <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
-
-    <input type="checkbox" id="remember_me" name="_remember_me" checked />
-    <label for="remember_me">Keep me logged in</label>
+    </div>
     <br><br>
+    <div class="col-md-12 col-sm-12">
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="_password" />
+    </div>
+    <br><br>
+    <div class="col-md-12 col-sm-12">
+    <input type="checkbox" id="remember_me" name="_remember_me" checked />
+    <label for="remember_me">Mantener la sesión abierta</label>
+    </div>
+    <div class="col-md-12 col-sm-12">
+    <br>
     <input type="hidden" name="_target_path" value="panelcontrol" />
     <input type="submit" class="section-btn" name="login" />
+    </div>
 </form>
-       </div>     
+       </div>  
+</div>  
+       </section>   
 {% endblock %}
 
-{% block sidebar %}
+{% block css %}
+        {{parent()}}
+        <style>
+        .custom-navbar .navbar-brand {
+    color: black !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        .custom-navbar .nav li a {
+    color: black !important;
+}
+        </style>
 {% endblock %}

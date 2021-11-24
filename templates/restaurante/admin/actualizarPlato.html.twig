@@ -4,16 +4,30 @@
 {% block titulo %}Bienvenido a Casa Carmen{% endblock %}
 
 {% block contenido %}
-
+<section data-stellar-background-ratio="0.5">
+     <div class="container "> 
 
             <div class="contact-form container">
 	        <h3>Actualizar Plato</h3>
 	        {{form(form)}}
             
-            <a href="{{ path('restaurante_eliminar', {'id' : plato.id }) }}"><button class="submit">Borrar Plato</button></a>
+            
             </div> 
-
+</div>
+     </section>   
 {% endblock %}
 
-{% block sidebar %}
+{% block css %}
+        {{parent()}}
+        <style>
+        .custom-navbar .navbar-brand {
+    color: black !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        .custom-navbar .nav li a {
+    color: black !important;
+}
+        </style>
 {% endblock %}

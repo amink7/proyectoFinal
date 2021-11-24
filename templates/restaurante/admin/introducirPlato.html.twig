@@ -4,14 +4,29 @@
 {% block titulo %}Bienvenido a Casa Carmen{% endblock %}
 
 {% block contenido %}
-
+<section data-stellar-background-ratio="0.5">
+     <div class="container "> 
             <hr></hr>
             <div class="contact-form container">
 	        <h3>Añadir Plato</h3>
 	        {{form(form)}}
             </div>  
             <hr></hr>
+            </div>
+     </section>   
 {% endblock %}
 
-{% block sidebar %}
+{% block css %}
+        {{parent()}}
+        <style>
+        .custom-navbar .navbar-brand {
+    color: black !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        .custom-navbar .nav li a {
+    color: black !important;
+}
+        </style>
 {% endblock %}

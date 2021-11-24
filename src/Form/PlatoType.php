@@ -17,8 +17,8 @@ class PlatoType extends AbstractType
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre', TextType::class, array('label' => 'Nombre de la plato', 'attr' => array('class' => 'input')))
-        ->add('descripcion', TextType::class, array('label' => 'Descripción de la plato', 'attr' => array('class' => 'input')))
+        $builder->add('nombre', TextType::class, array('label' => 'Nombre del plato', 'attr' => array('class' => 'input')))
+        ->add('descripcion', TextType::class, array('label' => 'Descripción del plato', 'attr' => array('class' => 'input')))
         ->add('fechaCreacion', DateType::class, array('widget' => 'choice','attr' => ['class' => 'select']))
         ->add('precio', NumberType::class, array('attr' => array('class' => 'input')))
         ->add('categoria', EntityType::class, [

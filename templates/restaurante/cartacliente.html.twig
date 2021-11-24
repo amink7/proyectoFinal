@@ -3,43 +3,57 @@
 {% block titulo %}Bienvenido a Casa Carmen{% endblock %}
 
 {% block contenido %}
-     <br> <br> <br> <br> 
-     <div class="container"> 
-     <table class="table">  
-     <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Precio</th>
-    </tr>
-  </thead>
-        {% for plato in platos %}
+     <section data-stellar-background-ratio="0.5">
+     <div class="container "> 
+      <div class="row">
+
+            {% for categoria in categorias %}
+              <h2>{{categoria.nombre}}</h2>
+              <table class="table">  
+              <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+              </tr>
+            </thead>
+              {% for plato in categoria.platos %}
           
   
-  <tbody>
-    <tr>
-      <th scope="row">{{plato.id}}</th>
-      <td>{{plato.nombre}}</td>
-      <td>{{plato.descripcion}}</td>
-      <td>{{plato.precio}}€</td>
-      
-      
-    </tr>
-    <br>
+              <tbody>
+                <tr>
+                  <td>{{plato.nombre}}</td>
+                  <td>{{plato.descripcion}}</td>
+                  <td>{{plato.precio}}€</td>
+                  
+                </tr>
+                <br>
   
                          
                            
           
         {% endfor %}
-        </div>  
-        <div class="clearfix"> </div>
-</tbody>
-</table>
         
-
-
+        <div class="clearfix"> </div>
+            </tbody>
+            </table>
+        {% endfor %}
+</div>  
+</div>  
+  </section>
 {% endblock %}
 
-{% block sidebar %}
+{% block css %}
+        {{parent()}}
+        <style>
+        .custom-navbar .navbar-brand {
+    color: black !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        .custom-navbar .nav li a {
+    color: black !important;
+}
+        </style>
 {% endblock %}

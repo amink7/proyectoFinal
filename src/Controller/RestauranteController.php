@@ -36,7 +36,7 @@ class RestauranteController extends AbstractController
     {
       $repository = $this->getDoctrine()->getRepository('App:Categorias');
       $categorias = $repository->findAll();
-      return $this->render('restaurante/admin/carta.html.twig',array('categorias'=>$categorias));
+      return $this->render('restaurante/cartacliente.html.twig',array('categorias'=>$categorias));
     }
 
     public function platounico($idPlato)
@@ -88,7 +88,7 @@ class RestauranteController extends AbstractController
     {
       $em = $this->getDoctrine()->getManager();
       $plato = $em->getRepository(Plato::Class)->find($idPlato);
-      if (!$apuesta){
+      if (!$idPlato){
         throw $this->createNotFoundException(
             'No existe ningun plato con id '.$idPlato
         );
@@ -118,7 +118,7 @@ class RestauranteController extends AbstractController
           $em = $this->getDoctrine()->getManager();
           $em->persist($categoria);
           $em->flush();
-
+          return $this->redirectToRoute('carta');
       }
 
         return $this->render('restaurante/admin/introducirCategoria.html.twig',array('form'=> $form->createView()));
@@ -137,9 +137,9 @@ class RestauranteController extends AbstractController
           $em = $this->getDoctrine()->getManager();
           $em->persist($oferta);
           $em->flush();
-
+          return $this->redirectToRoute('carta');
       }
-
+      
         return $this->render('restaurante/admin/introducirOferta.html.twig',array('form'=> $form->createView()));
     }
 
