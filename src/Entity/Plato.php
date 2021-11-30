@@ -47,9 +47,9 @@ class Plato
     private $fechaCreacion;
 
     /**
-     * @var int
+     * @var float
      *
-     * @ORM\Column(name="precio", type="integer")
+     * @ORM\Column(name="precio", type="float")
      */
     private $precio;
 
@@ -154,7 +154,7 @@ class Plato
     /**
      * Set precio
      *
-     * @param integer $precio
+     * @param float $precio
      *
      * @return Plato
      */
@@ -168,7 +168,7 @@ class Plato
     /**
      * Get precio
      *
-     * @return int
+     * @return float
      */
     public function getPrecio()
     {
@@ -199,9 +199,18 @@ class Plato
         return $this;
     }
 
-    public function getPrecioFinal(): ?int
+    public function getPrecioFinal(): ?float
     {
-        return $this->precioFinal;
+        if($this->estaDeOferta()){
+            
+            return $this->precio * ((100- $this->oferta->getDescuento())/100);
+        }
+        return $this->precio;
+    }
+
+    public function estaDeOferta()
+    {
+        return $this->oferta != null;
     }
 
     

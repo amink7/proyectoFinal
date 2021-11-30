@@ -26,10 +26,10 @@
   
   <tbody>
     <tr>
-      <td>{{plato.nombre}}</td>
+      <td>{{plato.nombre }}</td>
       <td>{{plato.descripcion}}</td>
-      <td>{{plato.precio}}€</td>
-      <td>€</td>
+      <td>{{plato.precio|format_currency('EUR')}}</td>
+      <td>{% if(plato.estaDeOferta()) %} {{plato.getPrecioFinal()|format_currency('EUR')}} {% endif %}</td>
       <td><a href="{{path('restaurante_actualizar', {'idPlato': plato.id})}}"><button class="submit" type="button" name="button">Editar</button></a> </td>
       <td><a href="{{path('restaurante_eliminar', {'idPlato': plato.id})}}"><button class="submit" type="button" name="button">Eliminar</button></a> </td>
       
