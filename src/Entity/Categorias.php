@@ -72,7 +72,6 @@ class Categorias
     public function removePlato(Plato $plato): self
     {
         if ($this->platos->removeElement($plato)) {
-            // set the owning side to null (unless already changed)
             if ($plato->getCategoria() === $this) {
                 $plato->setCategoria(null);
             }

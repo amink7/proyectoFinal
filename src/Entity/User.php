@@ -153,7 +153,7 @@ class User implements UserInterface
           $this->id,
           $this->username,
           $this->password,
-          // ver la sección salt debajo
+          
           // $this->salt,
       ));
   }
@@ -165,7 +165,7 @@ class User implements UserInterface
           $this->id,
           $this->username,
           $this->password,
-          // ver la sección salt debajo
+          
           // $this->salt
       ) = unserialize($serialized);
   }
